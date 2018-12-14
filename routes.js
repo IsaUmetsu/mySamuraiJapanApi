@@ -1,10 +1,12 @@
+const { players } = require('./src/controller');
+
 module.exports = app => {
 
-  app.get('/', function(req, res, next) {
+  app.get('/', (req, res, next) => {
     res.render('index', { title: 'Express' });
   });
 
-  app.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+  app.get('/players', (req, res, next) => {
+    players.getTeamMember(req, res)
   });
 }
